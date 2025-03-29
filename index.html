@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubito - Speed Cubing Platform</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics-compat.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <div class="logo-image">
+                        <svg viewBox="0 0 100 100" class="logo-icon">
+                            <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M50 10 L50 90" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M10 30 L90 30" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M10 70 L90 70" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>CUBITO</h1>
+                        <span class="tagline">DON'T CUBE ALONE.</span>
+                    </div>
+                </div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#premium">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact" class="cta-button">Get Started</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Elevate Your Cubing Experience</h1>
+                <p>Join the fastest-growing speed cubing community. Track your progress, compete with others, and become a better cuber.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="primary-button">Get Started</a>
+                    <a href="#features" class="secondary-button">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-cube">
+                <div class="cube-container">
+                    <div class="cube">
+                        <div class="cube-face front"></div>
+                        <div class="cube-face back"></div>
+                        <div class="cube-face right"></div>
+                        <div class="cube-face left"></div>
+                        <div class="cube-face top"></div>
+                        <div class="cube-face bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Ranking and Elo System</h3>
+                    <p>Compete with cubers worldwide with our fair and competitive ranking system based on Elo ratings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Fun Minigames</h3>
+                    <p>Enjoy various cube-related minigames to practice while having fun and competing with friends.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <h3>Scramble Generator</h3>
+                    <p>WCA-compliant scrambles for all official puzzle types with visual previews.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Global Community</h3>
+                    <p>Connect with cubers worldwide, join competitions, and share your achievements.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Learning Resources</h3>
+                    <p>Access tutorials, algorithms, and advanced techniques to improve your solving skills.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Anti-Cheat System</h3>
+                    <p>Compete with confidence using our advanced verification system that ensures fair play in all competitions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About Cubito</h2>
+                <p>Compete in real-time tournaments, track your progress with our Elo system, and improve your skills through engaging minigames. Join our community of cubers and take your speedcubing to the next level.</p>
+                <p>Weekly competitions, global rankings, and skill-based matchmaking ensure fair play. Practice with pattern recognition games and algorithm challenges to sharpen your techniques.</p>
+                <a href="#contact" class="primary-button">Join Our Community</a>
+            </div>
+            <div class="about-image">
+                <div class="about-cube">
+                    <div class="about-cube-grid">
+                        <div class="about-cube-cell"></div>
+                        <div class="about-cube-cell"></div>
+                        <div class="about-cube-cell"></div>
+                        <div class="about-cube-cell"></div>
+                        <div class="about-cube-cell"></div>
+                        <div class="about-cube-cell"></div>
+                        <div class="about-cube-cell"></div>
+                        <div class="about-cube-cell"></div>
+                        <div class="about-cube-cell"></div>
+                    </div>
+                </div>
+                <div class="shape-decorations">
+                    <div class="shape cube-2d"></div>
+                    <div class="shape diamond"></div>
+                    <div class="shape square"></div>
+                    <div class="shape triangle"></div>
+                    <div class="shape rectangle"></div>
+                    <div class="shape cube-outline"></div>
+                    <div class="shape circle"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="premium" class="premium">
+        <div class="container">
+            <div class="premium-content">
+                <div class="premium-badge">
+                    <span>Pricing</span>
+                </div>
+                <h2 class="section-title">Unlock Your Full Potential</h2>
+                
+                <div class="premium-card">
+                    <div class="premium-price">
+                        <div class="price-tag">
+                            <span class="currency">$</span>
+                            <span class="amount">5</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="price-note">*Cancel anytime</p>
+                        <a href="#contact" class="premium-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Cubers Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Cubito has completely transformed my practice routine. The detailed statistics help me identify where I need to improve."</p>
+                        <div class="testimonial-author">
+                            <div>
+                                <h4>Alex Chen</h4>
+                                <p>Sub-10 Speedcuber</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The online competitions are fantastic! I can compete with cubers from around the world without leaving home."</p>
+                        <div class="testimonial-author">
+                            <div>
+                                <h4>Maria Rodriguez</h4>
+                                <p>3x3 Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"As a cubing coach, I recommend Cubito to all my students. The analytics and training tools are unmatched."</p>
+                        <div class="testimonial-author">
+                            <div>
+                                <h4>John Williams</h4>
+                                <p>Cubing Coach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Join?</h2>
+            <p class="section-description">Create your account and start your cubing journey with Cubito today!</p>
+            <form class="contact-form" id="signupForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <select class="custom-select" id="cubingLevel" required>
+                        <option value="" disabled selected>Select Your Cubing Level</option>
+                        <option value="beginner">Beginner (1min+)</option>
+                        <option value="intermediate">Intermediate (30s-1min)</option>
+                        <option value="advanced">Advanced (15s-30s)</option>
+                        <option value="expert">Expert (Sub-15s)</option>
+                    </select>
+                </div>
+                <div class="form-group preference-group">
+                    <p class="preference-label">How would you prefer to use Cubito?</p>
+                    <div class="preference-options">
+                        <label class="preference-option">
+                            <input type="radio" name="platform-preference" id="platformApp" value="app" required>
+                            <span>Mobile App</span>
+                        </label>
+                        <label class="preference-option">
+                            <input type="radio" name="platform-preference" id="platformWeb" value="website" required>
+                            <span>Website</span>
+                        </label>
+                        <label class="preference-option">
+                            <input type="radio" name="platform-preference" id="platformBoth" value="both" required>
+                            <span>Both</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="primary-button">
+                    <i class="fas fa-rocket"></i> Get Started
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>CUBITO</h2>
+                    <p>Elevate Your Cubing Experience</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column footer-nav">
+                        <h3>Navigate</h3>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#premium">Premium</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="#contact">Join Now</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column footer-social">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="https://instagram.com/Cubito_OP" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a href="https://twitter.com/bettlebaker" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="https://reddit.com/r/Cubito" target="_blank"><i class="fab fa-reddit"></i> Reddit</a></li>
+                            <li><a href="https://discord.gg/aRWScwEM" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Cubito. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Trust Indicators -->
+    <div class="trust-indicators">
+        <div class="container">
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Secure Payments</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-undo"></i>
+                    <span>30-Day Guarantee</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-headset"></i>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
