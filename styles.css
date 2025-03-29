@@ -1697,23 +1697,21 @@ footer::before {
 }
 
 .testimonial-author {
+    margin-top: 20px;
     display: flex;
-    align-items: center;
-    position: relative;
-    padding-left: 15px;
-    border-left: 3px solid var(--primary-color);
+    flex-direction: column;
+    gap: 5px;
 }
 
-.testimonial-author h4 {
-    font-size: 1.1rem;
+.author-name {
+    font-weight: 600;
     color: var(--text-color);
-    margin-bottom: 5px;
+    font-size: 1.1rem;
 }
 
-.testimonial-author p {
-    font-size: 0.9rem;
+.author-title {
     color: var(--light-text);
-    font-style: normal;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
